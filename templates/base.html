@@ -1,0 +1,150 @@
+{% load staticfiles %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Craigdecent</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</head>
+<body>
+<div class="navbar-fixed">
+<nav style="background-color: #303036;">
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">Search Anything</a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="/">Home</a></li>
+            <li><a style="hover:red" href="#bottom">About Us</a></li>
+
+        </ul>
+    </div>
+</nav>
+</div>
+<div class="container">
+<h1 style="text-align: center">Happy Holidays What would you want to Buy Today ?</h1>
+    <div class="row">
+        <div class="col s4">
+            <!-- Promo Content 1 goes here -->
+            <div class="center">
+                <i class="large material-icons" style="color: #EE6E73">flash_on</i>
+                <p>Fast craigslist web scraper</p>
+                <p class="light center">Scrape away right here with a beautiful GUI.</p>
+            </div>
+        </div>
+        <div class="col s4">
+            <!-- Promo Content 2 goes here -->
+            <div class="center">
+                <i class="large material-icons" style="color: orange">camera</i>
+                <p>Filter your searches</p>
+                <p class="light center">We built in functionality to filter based on pricing.</p>
+            </div>
+        </div>
+         <div class="col s4">
+            <!-- Promo Content 3 goes here -->
+            <div class="center">
+                <i class="large material-icons" style="color: blue">chrome_reader_mode</i>
+                <p>A much better front-end to Craigslist</p>
+                <p class="light center">Building this with ❤️</p>
+            </div>
+        </div>
+    </div>
+    <form action="{% url 'new_search' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="search" placeholder="search">
+     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+    {% block content %}
+<script>
+ $(document).ready(function(){
+    $('.carousel').carousel();
+    setInterval(function(){
+         $('.carousel').carousel('next');
+
+  },2000 );
+  });
+  </script>
+    <p><h4>Cant Decide? Have A Look at Trending Choices !</h4></p>
+        <div class="carousel carousel-slider" data-indicators="true">
+            <a class="carousel-item" href="https://losangeles.craigslist.org/search/sss?query=puppy&sort=rel"><img src="{% static 'Images/puppy-development.jpg' %}"><h6 style="color:black">New Born Puppies Up for Sale</h6></a>
+            <a class="carousel-item" href="https://losangeles.craigslist.org/search/sss?query=iphone&sort=rel"><img src="{% static 'Images/Iphone.jpg' %}"><h6 style="color:black">Iphone X</h6></a>
+            <a class="carousel-item" href="https://losangeles.craigslist.org/search/sss?query=Books&sort=rel"><img src="{% static 'Images/books.jpeg' %}"><h6 style="color:black">Must Read Books People want to Share</h6></a>
+  </div>
+
+    <style>
+        .carousel{
+        height:350px !Important;
+        width:500px;
+        align:left;
+        }
+     .page-footer {
+        background-color: #303036;
+    }
+    .p{
+    colr:black;
+    }
+
+    </style>
+    <!--<div class="footer">-->
+        <!--<div class="footer-section">-->
+
+
+
+        <!--</div>-->
+
+</div>
+
+    <!--</div>-->
+<div id="bottom">
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">About</h5>
+                <p class="grey-text text-lighten-4">Best In The Market Products Site. We are just intermediate to help to find best buyer and seller and its absolutely free. </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><h6><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></h6></li>
+                  <!--<li><a class="grey-text text-lighten-3" href="#!"><h5 style="color:blue;">Github</h5></a></li>-->
+                  <li><h6><a class="grey-text text-lighten-3" href="#!">Products</a></h6></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Sahil
+            <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+
+            </div>
+          </div>
+        </footer>
+
+</div>
+    {% endblock content %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>

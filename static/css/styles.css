@@ -1,0 +1,11 @@
+.card {
+    height: 400px; /* Your height here */
+    overflow: hidden;
+}
+body {
+  background-color: #D3D3D3;
+}
+.card-image {
+    height: 250px; /* Your height here */
+    overflow: hidden;
+}
